@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Included Files">
+      <UniqueIdentifier>{473db5a2-493a-4364-91d1-ee5df35c3599}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Included Files\gzcom-dll">
+      <UniqueIdentifier>{4f46528d-2814-42cf-95b1-fc695610e131}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor-sour">
+      <UniqueIdentifier>{aa7c10d3-b977-49f6-8187-b1d13bcb288e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZOStream.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZRadio.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZSerializable.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZString.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZSystemService.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZUnknown.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZUnknownList.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZWin.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZWinMgr.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4Advice.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4AdviceSubject.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4Advisor.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4AdvisorSystem.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4App.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4BudgetSimulator.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4BuildingDevelopmentSimulator.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4BuildingOccupant.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4BusinessUnit.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4City.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4ConstructionOccupant.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4DBSegmentIStream.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4DBSegmentOStream.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4DisasterInstance.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4DisasterInstanceFire.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4DisasterInstanceVolcano.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4DisasterLayer.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4DisasterManager.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4DisasterManagerFire.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4DisasterManagerVolcano.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4FeatureManager.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4FireOccupant.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4FloraOccupant.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4FoundationOccupant.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4HistoryWarehouse.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4LandfillOccupant.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4Lot.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4LotBaseTextureOccupant.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4LotConfiguration.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4LotConfigurationManager.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4LotDeveloper.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4LotManager.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4LotRetainingWallOccupant.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4Nation.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4NetworkManager.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4Occupant.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4OccupantFilter.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4OccupantManager.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4PoliceSimulator.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4PollutionSimulator.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4PowerLineOccupant.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4Region.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4RegionalCity.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4RenderProperties.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4ResidentialSimulator.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4SimGrid.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4Simulator.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4TractDeveloper.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4TrafficSource.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4TutorialSystem.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4View3DWin.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC43DRender.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC424HourClock.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISCExemplarPropertyHolder.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISCPropertyHolder.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISCResExemplar.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cRZAutoRefCount.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cRZBaseString.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cRZCOMDllDirector.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cRZMessage2.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cRZMessage2COMDirector.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cRZMessage2Standard.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cRZPoint.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cRZSysServPtr.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cRZUnknown.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cS3DCamera.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cS3DVector3.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cSC4OccupantTypeFilter.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\GZCLSIDDefs.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\GZMSGIDDefs.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\GZServDecls.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\GZServPtrs.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\ilist.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\SC4Point.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\SC4Rect.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cGZAllocatorServiceSTLAllocator.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cGZCOMLibrary.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cGZMessage.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZAllocatorService.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZApp.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZCanvasMessage.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZCheatCodeManager.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZCOM.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZCOMDirector.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZCOMLibrary.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZCommandDispatcher.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZCommandServer.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZDate.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZFrameWork.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZFrameWorkHooks.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZIStream.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZKeyMessage.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZMessage2.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZMessage2Standard.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZMessageServer.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZMessageServer2.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZMessageTarget.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZMessageTarget2.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZMouseMessage.h">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClInclude>
+    <ClInclude Include="cMessageLoggerCOMDirector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="vendor\gzcom-dll\gzcom-dll\src\cRZMessage2.cpp">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\gzcom-dll\gzcom-dll\src\cRZMessage2Standard.cpp">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\gzcom-dll\gzcom-dll\src\cRZBaseString.cpp">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClCompile>
+    <ClCompile Include="cMessageLoggerCOMDirector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\gzcom-dll\gzcom-dll\src\cRZCOMDllDirector.cpp">
+      <Filter>Included Files\gzcom-dll</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

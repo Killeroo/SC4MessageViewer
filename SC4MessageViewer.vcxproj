@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{8fd5ae1f-8b2c-4341-b1fa-e1aaa78c4f60}</ProjectGuid>
+    <RootNamespace>SC4MessageViewer</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>vendor/gzcom-dll/gzcom-dll/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="cMessageLoggerCOMDirector.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cGZAllocatorServiceSTLAllocator.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cGZCOMLibrary.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cGZMessage.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZAllocatorService.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZApp.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZCanvasMessage.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZCheatCodeManager.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZCOM.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZCOMDirector.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZCOMLibrary.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZCommandDispatcher.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZCommandServer.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZDate.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZFrameWork.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZFrameWorkHooks.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZIStream.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZKeyMessage.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZMessage2.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZMessage2Standard.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZMessageServer.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZMessageServer2.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZMessageTarget.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZMessageTarget2.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZMouseMessage.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZOStream.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZRadio.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZSerializable.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZString.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZSystemService.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZUnknown.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZUnknownList.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZWin.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZWinMgr.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC424HourClock.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC43DRender.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4Advice.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4AdviceSubject.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4Advisor.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4AdvisorSystem.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4App.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4BudgetSimulator.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4BuildingDevelopmentSimulator.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4BuildingOccupant.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4BusinessUnit.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4City.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4ConstructionOccupant.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4DBSegmentIStream.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4DBSegmentOStream.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4DisasterInstance.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4DisasterInstanceFire.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4DisasterInstanceVolcano.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4DisasterLayer.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4DisasterManager.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4DisasterManagerFire.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4DisasterManagerVolcano.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4FeatureManager.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4FireOccupant.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4FloraOccupant.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4FoundationOccupant.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4HistoryWarehouse.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4LandfillOccupant.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4Lot.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4LotBaseTextureOccupant.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4LotConfiguration.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4LotConfigurationManager.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4LotDeveloper.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4LotManager.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4LotRetainingWallOccupant.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4Nation.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4NetworkManager.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4Occupant.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4OccupantFilter.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4OccupantManager.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4PoliceSimulator.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4PollutionSimulator.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4PowerLineOccupant.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4Region.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4RegionalCity.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4RenderProperties.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4ResidentialSimulator.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4SimGrid.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4Simulator.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4TractDeveloper.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4TrafficSource.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4TutorialSystem.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISC4View3DWin.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISCExemplarPropertyHolder.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISCPropertyHolder.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cISCResExemplar.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cRZAutoRefCount.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cRZBaseString.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cRZCOMDllDirector.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cRZMessage2.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cRZMessage2COMDirector.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cRZMessage2Standard.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cRZPoint.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cRZSysServPtr.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cRZUnknown.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cS3DCamera.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cS3DVector3.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cSC4OccupantTypeFilter.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\GZCLSIDDefs.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\GZMSGIDDefs.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\GZServDecls.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\GZServPtrs.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\ilist.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\SC4Point.h" />
+    <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\SC4Rect.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="cMessageLoggerCOMDirector.cpp" />
+    <ClCompile Include="vendor\gzcom-dll\gzcom-dll\src\cRZBaseString.cpp" />
+    <ClCompile Include="vendor\gzcom-dll\gzcom-dll\src\cRZCOMDllDirector.cpp" />
+    <ClCompile Include="vendor\gzcom-dll\gzcom-dll\src\cRZMessage2.cpp" />
+    <ClCompile Include="vendor\gzcom-dll\gzcom-dll\src\cRZMessage2Standard.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

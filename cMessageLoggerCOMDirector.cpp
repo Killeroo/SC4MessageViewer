@@ -3,8 +3,9 @@
 #include "include/cIGZFrameWork.h"
 #include "include/cIGZMessage2Standard.h"
 
-#include <Windows.h>
+#include "cConsoleLogger.h"
 
+#include <Windows.h>
 
 cMessageLoggerCOMDirector::cMessageLoggerCOMDirector()
 {
@@ -41,6 +42,8 @@ bool cMessageLoggerCOMDirector::OnStart(cIGZCOM* pCOM)
 
 bool cMessageLoggerCOMDirector::PostAppInit(void)
 {
+	printf("textextext");
+	cConsoleLogger::LogMessage(eConsoleColor::MAGENTA, L"This is a test");
 	return true;
 }
 

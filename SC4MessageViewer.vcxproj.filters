@@ -19,9 +19,6 @@
     <Filter Include="Included Files\gzcom-dll">
       <UniqueIdentifier>{4f46528d-2814-42cf-95b1-fc695610e131}</UniqueIdentifier>
     </Filter>
-    <Filter Include="vendor-sour">
-      <UniqueIdentifier>{aa7c10d3-b977-49f6-8187-b1d13bcb288e}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZOStream.h">
@@ -351,6 +348,9 @@
     <ClInclude Include="cMessageLoggerCOMDirector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="cConsoleLogger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="vendor\gzcom-dll\gzcom-dll\src\cRZMessage2.cpp">
@@ -367,6 +367,9 @@
     </ClCompile>
     <ClCompile Include="vendor\gzcom-dll\gzcom-dll\src\cRZCOMDllDirector.cpp">
       <Filter>Included Files\gzcom-dll</Filter>
+    </ClCompile>
+    <ClCompile Include="cConsoleLogger.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

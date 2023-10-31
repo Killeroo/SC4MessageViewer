@@ -25,6 +25,9 @@ public:
 	// Director Events
 	bool OnStart(cIGZCOM* pCOM);
 	bool PostAppInit();
+
+private:
+	bool bSetup = false;
 };
 
 // DLL entry point

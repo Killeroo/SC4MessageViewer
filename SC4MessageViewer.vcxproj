@@ -128,7 +128,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="cConfig.h" />
     <ClInclude Include="cConsoleLogger.h" />
+    <ClInclude Include="cFileHelper.h" />
     <ClInclude Include="cMessageLoggerCOMDirector.h" />
     <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cGZAllocatorServiceSTLAllocator.h" />
     <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cGZCOMLibrary.h" />
@@ -240,12 +242,19 @@
     <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\SC4Rect.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="cConfig.cpp" />
     <ClCompile Include="cConsoleLogger.cpp" />
+    <ClCompile Include="cFileHelper.cpp" />
     <ClCompile Include="cMessageLoggerCOMDirector.cpp" />
     <ClCompile Include="vendor\gzcom-dll\gzcom-dll\src\cRZBaseString.cpp" />
     <ClCompile Include="vendor\gzcom-dll\gzcom-dll\src\cRZCOMDllDirector.cpp" />
     <ClCompile Include="vendor\gzcom-dll\gzcom-dll\src\cRZMessage2.cpp" />
     <ClCompile Include="vendor\gzcom-dll\gzcom-dll\src\cRZMessage2Standard.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config.ini">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

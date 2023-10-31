@@ -5,15 +5,13 @@ HANDLE cConsoleLogger::hConsoleOutputHandle = NULL;
 CONSOLE_SCREEN_BUFFER_INFO cConsoleLogger::sbiConsoleInfo;
 WORD cConsoleLogger::wCurrentConsoleColor = 0;
 
-void cConsoleLogger::Init()
+bool cConsoleLogger::Init()
 {
     if (AllocConsole())
     {
         // Redirect stdout to the newly created console.
         freopen("CONOUT$", "w", stdout); // Use hConsoleOutputHandle instead
-
         printf("-> Console created\n");
-
 
         // Get current console values if they haven't been set yet
         hConsoleOutputHandle = GetStdHandle(STD_OUTPUT_HANDLE); // TODO: Move to init
@@ -26,18 +24,17 @@ void cConsoleLogger::Init()
             // Default colour if we couldn't get the current console buffer
             wCurrentConsoleColor = 8;
         }
+
+        return true;
     }
+
+    return false;
 }
 
 void cConsoleLogger::Teardown()
 {
-
     CloseHandle(hConsoleOutputHandle);
-
-    if (FreeConsole())
-    {
-    }
-
+    FreeConsole();
 }
 
 void cConsoleLogger::LogMessage(eConsoleColor color, const wchar_t* format, ...)
@@ -50,7 +47,7 @@ void cConsoleLogger::LogMessage(eConsoleColor color, const wchar_t* format, ...)
     GetSystemTime(&st);
 
     // Print time
-    printf("[%hu:%hu:%hu.%hu] \n",
+    printf("[%hu:%hu:%hu.%hu] ",
         st.wHour,
         st.wMinute,
         st.wSecond,
@@ -62,6 +59,19 @@ void cConsoleLogger::LogMessage(eConsoleColor color, const wchar_t* format, ...)
     vfwprintf(stdout, format, args);
     va_end(args);
 
+    // print new line
+    printf("\n");
+
     // Cleanup the colour after
     SetConsoleTextAttribute(hConsoleOutputHandle, wCurrentConsoleColor);
+}
+
+
+void cConsoleLogger::Log(const wchar_t* format, ...)
+{
+    // Print message and arguments with no fancy formatting
+    va_list args;
+    va_start(args, format);
+    vfwprintf(stdout, format, args);
+    va_end(args);
 }

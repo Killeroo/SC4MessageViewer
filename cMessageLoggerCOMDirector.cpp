@@ -4,24 +4,36 @@
 #include "include/cIGZMessage2Standard.h"
 
 #include "cConsoleLogger.h"
+#include "cFileHelper.h"
+#include "cConfig.h"
 
 #include <Windows.h>
 
 cMessageLoggerCOMDirector::cMessageLoggerCOMDirector()
 {
-	if (AllocConsole())
+	// Setup the console for logging
+	if (cConsoleLogger::Init())
 	{
-		// Redirect stdout to the newly created console.
-		freopen("CONOUT$", "w", stdout);
-
-		printf("-> Console created\n");
-
-		// TODO: Free console on destructor
+		cConsoleLogger::LogMessage(eConsoleColor::YELLOW, L"Sc4MessageViewer v1.0");
 	}
+	else
+	{
+		MessageBoxA(NULL, "Could not create console..", "Sc4MessageViewer", MB_OK);
+	}
+
+	// Try and read from the config file
+	const std::wstring configFilePath = cFileHelper::GetCurrentPath() + L"\\" + L"config.ini";
+	cConsoleLogger::LogMessage(WHITE, L"Loading %s", configFilePath.c_str());
+
+	cConfig config;
+	config.Load(configFilePath);
+
+
 }
 
 cMessageLoggerCOMDirector::~cMessageLoggerCOMDirector()
 {
+	cConsoleLogger::Teardown();
 }
 
 bool cMessageLoggerCOMDirector::DoMessage(cIGZMessage2* pMessage)

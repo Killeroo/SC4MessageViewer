@@ -14,9 +14,10 @@ enum eConsoleColor : WORD
 class cConsoleLogger
 {
 public:
-	static void Init();
+	static bool Init();
 	static void Teardown();
     static void LogMessage(eConsoleColor color, const wchar_t* format, ...);
+    static void Log(const wchar_t* format, ...);
 
 private:
     static HANDLE hConsoleOutputHandle;

@@ -351,6 +351,9 @@
     <ClInclude Include="cConsoleLogger.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="cConfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="vendor\gzcom-dll\gzcom-dll\src\cRZMessage2.cpp">
@@ -371,5 +374,13 @@
     <ClCompile Include="cConsoleLogger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="cConfig.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config.ini">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

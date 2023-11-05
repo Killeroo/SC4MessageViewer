@@ -371,9 +371,6 @@
     <ClCompile Include="vendor\gzcom-dll\gzcom-dll\src\cRZBaseString.cpp">
       <Filter>Included Files\gzcom-dll</Filter>
     </ClCompile>
-    <ClCompile Include="cMessageLoggerCOMDirector.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="vendor\gzcom-dll\gzcom-dll\src\cRZCOMDllDirector.cpp">
       <Filter>Included Files\gzcom-dll</Filter>
     </ClCompile>
@@ -386,9 +383,12 @@
     <ClCompile Include="src\cFileHelper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\cMessageLoggerCOMDirector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="config.ini">
+    <None Include="message_viewer_config.ini">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

@@ -2,11 +2,14 @@
 
 #include <stdio.h>
 #include <iostream>
+#include <thread>
 
 #include "include/cRZCOMDllDirector.h"
 #include "include/cRZMessage2COMDirector.h"
 #include "include/cIGZMessage2.h"
 #include "include/cIGZFrameWork.h"
+
+#include "cConfig.h"
 
 static const uint32_t kMessageLoggerDirectorId = 0xD81A8F98;
 
@@ -27,6 +30,7 @@ public:
 	bool PostAppInit();
 
 private:
+	cConfig config;
 	bool bSetup = false;
 };
 

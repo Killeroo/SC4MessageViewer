@@ -1,7 +1,10 @@
 #include "cConsoleLogger.h"
-#include <cstdio>
 
-HANDLE cConsoleLogger::hConsoleOutputHandle = NULL;
+#include <cstdio>
+#include <iostream>
+#include <string>
+
+HANDLE cConsoleLogger::hConsoleOutput = NULL;
 CONSOLE_SCREEN_BUFFER_INFO cConsoleLogger::sbiConsoleInfo;
 WORD cConsoleLogger::wCurrentConsoleColor = 0;
 
@@ -10,12 +13,11 @@ bool cConsoleLogger::Init()
     if (AllocConsole())
     {
         // Redirect stdout to the newly created console.
-        freopen("CONOUT$", "w", stdout); // Use hConsoleOutputHandle instead
-        printf("-> Console created\n");
+        freopen("CONOUT$", "w", stdout); // Use hConsoleOutput instead
 
         // Get current console values if they haven't been set yet
-        hConsoleOutputHandle = GetStdHandle(STD_OUTPUT_HANDLE); // TODO: Move to init
-        if (GetConsoleScreenBufferInfo(hConsoleOutputHandle, &sbiConsoleInfo))
+        hConsoleOutput = GetStdHandle(STD_OUTPUT_HANDLE); // TODO: Move to init
+        if (GetConsoleScreenBufferInfo(hConsoleOutput, &sbiConsoleInfo))
         {
             wCurrentConsoleColor = sbiConsoleInfo.wAttributes;
         }
@@ -33,45 +35,44 @@ bool cConsoleLogger::Init()
 
 void cConsoleLogger::Teardown()
 {
-    CloseHandle(hConsoleOutputHandle);
+    CloseHandle(hConsoleOutput);
     FreeConsole();
 }
 
-void cConsoleLogger::LogMessage(eConsoleColor color, const wchar_t* format, ...)
+void cConsoleLogger::LogMessage(eLogLevel level, const char* format, ...)
 {
-    // set our colour
-    SetConsoleTextAttribute(hConsoleOutputHandle, color);
+    if (wCurrentConsoleColor != level)
+    {
+        wCurrentConsoleColor = level;
+        SetConsoleTextAttribute(hConsoleOutput, wCurrentConsoleColor);
+    }
 
     // Get current time
     SYSTEMTIME st;
     GetSystemTime(&st);
 
     // Print time
-    printf("[%hu:%hu:%hu.%hu] ",
+    printf("[%hu:%hu:%hu.%hu] [%s] ",
         st.wHour,
         st.wMinute,
         st.wSecond,
-        st.wMilliseconds);
+        st.wMilliseconds,
+        mLogLevelStrings.at(level).c_str()); // Should check this level exists in the map but yeah...
 
     // Fetch arguments and format them into output
     va_list args;
     va_start(args, format);
-    vfwprintf(stdout, format, args);
+    vfprintf(stdout, format, args);
     va_end(args);
 
-    // print new line
-    printf("\n");
-
-    // Cleanup the colour after
-    SetConsoleTextAttribute(hConsoleOutputHandle, wCurrentConsoleColor);
+    // Don't better resetting, for a small performance gain maybe
+    //SetConsoleTextAttribute(hConsoleOutputHandle, wCurrentConsoleColor);
 }
 
-
-void cConsoleLogger::Log(const wchar_t* format, ...)
+void cConsoleLogger::Log(const char* format, ...)
 {
-    // Print message and arguments with no fancy formatting
     va_list args;
     va_start(args, format);
-    vfwprintf(stdout, format, args);
+    vfprintf(stdout, format, args);
     va_end(args);
 }

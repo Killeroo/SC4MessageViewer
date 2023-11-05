@@ -1,14 +1,29 @@
 #pragma once
 
 #include <Windows.h>
+#include <cstdio>
+#include <iostream>
+#include <string>
+#include <type_traits>
+#include <map>
 
-enum eConsoleColor : WORD
+#undef ERROR
+
+enum eLogLevel : WORD
 {
-    GREEN = 2,
-    RED = 4,
-    MAGENTA = 5,
-    YELLOW = 6,
-    WHITE = 7
+    EVENT = 15,
+    INFO = 7,
+    WARNING = 6,
+    ERROR = 4,
+    FATAL = 5,
+};
+
+const static std::map<WORD, std::string> mLogLevelStrings = {
+    {eLogLevel::EVENT, std::string("EVENT")},
+    {eLogLevel::INFO, std::string("INFO")},
+    {eLogLevel::WARNING, std::string("WARNING")},
+    {eLogLevel::ERROR, std::string("ERROR")},
+    {eLogLevel::FATAL, std::string("FATAL")}
 };
 
 class cConsoleLogger
@@ -16,11 +31,11 @@ class cConsoleLogger
 public:
 	static bool Init();
 	static void Teardown();
-    static void LogMessage(eConsoleColor color, const wchar_t* format, ...);
-    static void Log(const wchar_t* format, ...);
+    static void Log(const char* format, ...);
+    static void LogMessage(eLogLevel level, const char* format, ...);
 
 private:
-    static HANDLE hConsoleOutputHandle;
+    static HANDLE hConsoleOutput;
     static CONSOLE_SCREEN_BUFFER_INFO sbiConsoleInfo;
     static WORD wCurrentConsoleColor;
 };

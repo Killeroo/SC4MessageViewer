@@ -130,11 +130,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="cConfig.h" />
-    <ClInclude Include="cConsoleLogger.h" />
-    <ClInclude Include="cFileHelper.h" />
-    <ClInclude Include="cMessageLoggerCOMDirector.h" />
-    <ClInclude Include="Constants.h" />
+    <ClInclude Include="src\cConfig.h" />
+    <ClInclude Include="src\cConsoleLogger.h" />
+    <ClInclude Include="src\cFileHelper.h" />
+    <ClInclude Include="src\cMessageLoggerCOMDirector.h" />
+    <ClInclude Include="src\Constants.h" />
     <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cGZAllocatorServiceSTLAllocator.h" />
     <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cGZCOMLibrary.h" />
     <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cGZMessage.h" />
@@ -245,10 +245,10 @@
     <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\SC4Rect.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="cConfig.cpp" />
-    <ClCompile Include="cConsoleLogger.cpp" />
-    <ClCompile Include="cFileHelper.cpp" />
-    <ClCompile Include="cMessageLoggerCOMDirector.cpp" />
+    <ClCompile Include="src\cConfig.cpp" />
+    <ClCompile Include="src\cConsoleLogger.cpp" />
+    <ClCompile Include="src\cFileHelper.cpp" />
+    <ClCompile Include="src\cMessageLoggerCOMDirector.cpp" />
     <ClCompile Include="vendor\gzcom-dll\gzcom-dll\src\cRZBaseString.cpp" />
     <ClCompile Include="vendor\gzcom-dll\gzcom-dll\src\cRZCOMDllDirector.cpp" />
     <ClCompile Include="vendor\gzcom-dll\gzcom-dll\src\cRZMessage2.cpp" />

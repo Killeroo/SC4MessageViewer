@@ -345,19 +345,19 @@
     <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\cIGZMouseMessage.h">
       <Filter>Included Files\gzcom-dll</Filter>
     </ClInclude>
-    <ClInclude Include="cMessageLoggerCOMDirector.h">
+    <ClInclude Include="src\cMessageLoggerCOMDirector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="cConsoleLogger.h">
+    <ClInclude Include="src\cConsoleLogger.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="cConfig.h">
+    <ClInclude Include="src\cConfig.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="cFileHelper.h">
+    <ClInclude Include="src\cFileHelper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Constants.h">
+    <ClInclude Include="src\Constants.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -377,13 +377,13 @@
     <ClCompile Include="vendor\gzcom-dll\gzcom-dll\src\cRZCOMDllDirector.cpp">
       <Filter>Included Files\gzcom-dll</Filter>
     </ClCompile>
-    <ClCompile Include="cConsoleLogger.cpp">
+    <ClCompile Include="src\cConsoleLogger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="cConfig.cpp">
+    <ClCompile Include="src\cConfig.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="cFileHelper.cpp">
+    <ClCompile Include="src\cFileHelper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

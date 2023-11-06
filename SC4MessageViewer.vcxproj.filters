@@ -391,5 +391,6 @@
     <None Include="message_viewer_config.ini">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

@@ -25,8 +25,7 @@ cMessageLoggerCOMDirector::cMessageLoggerCOMDirector()
 	}
 
 	// Try and read from the config file
-	// (When we use GetCurrentPath, we are retrieving the location of "SimCity 4.exe" so need to do some fiddling to get the plugin path)
-	const std::wstring configFilePath = cFileHelper::GetParentDirectory(cFileHelper::GetCurrentPath()) + L"\\" + L"Plugins" + L"\\" + CONFIG_FILE_NAME;
+	const std::filesystem::path configFilePath = cFileHelper::GetCurrentModuleDirectory().append(CONFIG_FILE_NAME);
 	if (cFileHelper::DoesFileExist(configFilePath) == false)
 	{
 		if (config.CreateDefault(configFilePath) == false)

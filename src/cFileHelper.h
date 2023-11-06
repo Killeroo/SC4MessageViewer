@@ -1,11 +1,10 @@
 #pragma once
 
-#include <string>
+#include <filesystem>
 
 class cFileHelper
 {
 public:
-	static std::wstring GetCurrentPath();
-	static std::wstring GetParentDirectory(std::wstring path);
-	static bool DoesFileExist(const std::wstring& path);
+	static std::filesystem::path GetCurrentModuleDirectory();
+	static bool DoesFileExist(const std::filesystem::path& path);
 };

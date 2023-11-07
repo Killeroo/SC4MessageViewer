@@ -20,12 +20,15 @@ bool cConfig::CreateDefault(const std::wstring& sPath)
 	return true;
 }
 
-bool cConfig::Load(const std::wstring& sPath)
+bool cConfig::Load(const std::wstring& sPath, const cConsoleLogger* logger)
 {
 	std::ifstream fileStream(sPath.c_str());
 	if (fileStream.fail())
 	{
-		cConsoleLogger::LogMessage(eLogLevel::ERROR, "Failed to read config file\n");
+		if (logger)
+		{
+			logger->LogMessage(eLogLevel::ERROR, "Failed to read config file\n");
+		}
 		return false;
 	}
 
@@ -86,16 +89,20 @@ bool cConfig::Load(const std::wstring& sPath)
 		}
 	}
 
-	if (skippedProperties.size() > 0)
+	if (logger)
 	{
-		cConsoleLogger::LogMessage(eLogLevel::WARNING, "%d message ids could not be parsed:\n", skippedProperties.size());
-		for (const std::string& property : skippedProperties)
+		if (skippedProperties.size() > 0)
 		{
-			cConsoleLogger::Log("-> %s\n", property.c_str());
+			logger->LogMessage(eLogLevel::WARNING, "%d message ids could not be parsed:\n", skippedProperties.size());
+			for (const std::string& property : skippedProperties)
+			{
+				logger->Log("-> %s\n", property.c_str());
+			}
 		}
+
+		logger->LogMessage(eLogLevel::INFO, "Read %d message ids from config file\n", mMessageIds.size());
 	}
 
-	cConsoleLogger::LogMessage(eLogLevel::INFO, "Read %d message ids from config file\n", mMessageIds.size());
 	return true;
 }
 

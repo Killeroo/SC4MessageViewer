@@ -12,16 +12,16 @@
 
 #include <Windows.h>
 
-cMessageLoggerCOMDirector::cMessageLoggerCOMDirector()
+cMessageLoggerCOMDirector::cMessageLoggerCOMDirector() : config(), logger()
 {
 	// Setup the console for logging
-	if (cConsoleLogger::Init())
+	try
 	{
-		cConsoleLogger::LogMessage(eLogLevel::INFO, PROGRAM_NAME);
+		logger = std::make_unique<cConsoleLogger>();
 	}
-	else
+	catch (const std::exception& e)
 	{
-		MessageBoxA(NULL, "Could not create console..", "Sc4MessageViewer", MB_OK);
+		MessageBoxA(NULL, e.what(), "Sc4MessageViewer - Could not create console", MB_OK | MB_ICONERROR);
 	}
 
 	// Try and read from the config file
@@ -30,17 +30,19 @@ cMessageLoggerCOMDirector::cMessageLoggerCOMDirector()
 	{
 		if (config.CreateDefault(configFilePath) == false)
 		{
-			cConsoleLogger::LogMessage(eLogLevel::ERROR, "Could not create default config file\n");
+			if (logger)
+			{
+				logger->LogMessage(eLogLevel::ERROR, "Could not create default config file\n");
+			}
 		}
 	}
 
 	// Load our config
-	config.Load(configFilePath);
+	config.Load(configFilePath, logger.get());
 }
 
 cMessageLoggerCOMDirector::~cMessageLoggerCOMDirector()
 {
-	cConsoleLogger::Teardown();
 }
 
 bool cMessageLoggerCOMDirector::DoMessage(cIGZMessage2* pMessage)
@@ -50,7 +52,10 @@ bool cMessageLoggerCOMDirector::DoMessage(cIGZMessage2* pMessage)
 
 	if (config.GetMessageIds().count(dwType) != 0)
 	{
-		cConsoleLogger::LogMessage(eLogLevel::EVENT, "%s\n", config.GetMessageIds().at(dwType).c_str());
+		if (logger)
+		{
+			logger->LogMessage(eLogLevel::EVENT, "%s\n", config.GetMessageIds().at(dwType).c_str());
+		}
 	}
 
 	return true;
@@ -67,12 +72,18 @@ bool cMessageLoggerCOMDirector::PostAppInit(void)
 	cIGZMessageServer2Ptr pMessageServer;
 	if (!pMessageServer)
 	{
-		cConsoleLogger::LogMessage(eLogLevel::ERROR, "Could not fetch message server.\n");
+		if (logger)
+		{
+			logger->LogMessage(eLogLevel::ERROR, "Could not fetch message server.\n");
+		}
 		return true;
 	}
 	if (config.GetMessageIds().size() == 0)
 	{
-		cConsoleLogger::LogMessage(eLogLevel::ERROR, "No valid message ids have been parsed. Nothing to listen too.\n");
+		if (logger)
+		{
+			logger->LogMessage(eLogLevel::ERROR, "No valid message ids have been parsed. Nothing to listen too.\n");
+		}
 		return true;
 	}
 
@@ -86,10 +97,16 @@ bool cMessageLoggerCOMDirector::PostAppInit(void)
 		}
 		else
 		{
-			cConsoleLogger::LogMessage(eLogLevel::WARNING, "Failed to register message: %s (%d)\n", entry.second.c_str(), entry.first);
+			if (logger)
+			{
+				logger->LogMessage(eLogLevel::WARNING, "Failed to register message: %s (%d)\n", entry.second.c_str(), entry.first);
+			}
 		}
 	}
-	cConsoleLogger::LogMessage(eLogLevel::INFO, "Successfully registered %d/%d messages\n", registeredMessages, config.GetMessageIds().size());
+	if (logger)
+	{
+		logger->LogMessage(eLogLevel::INFO, "Successfully registered %d/%d messages\n", registeredMessages, config.GetMessageIds().size());
+	}
 
 	return true;
 }

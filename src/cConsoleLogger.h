@@ -29,13 +29,14 @@ const static std::map<WORD, std::string> mLogLevelStrings = {
 class cConsoleLogger
 {
 public:
-	static bool Init();
-	static void Teardown();
-    static void Log(const char* format, ...);
-    static void LogMessage(eLogLevel level, const char* format, ...);
+    cConsoleLogger();
+
+    ~cConsoleLogger();
+
+    void Log(const char* format, ...) const;
+    void LogMessage(eLogLevel level, const char* format, ...) const;
 
 private:
-    static HANDLE hConsoleOutput;
-    static CONSOLE_SCREEN_BUFFER_INFO sbiConsoleInfo;
-    static WORD wCurrentConsoleColor;
+    HANDLE hConsoleOutput;
+    mutable WORD wCurrentConsoleColor;
 };

@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 #include <iostream>
+#include <memory>
 #include <thread>
 
 #include "include/cRZCOMDllDirector.h"
@@ -10,6 +11,7 @@
 #include "include/cIGZFrameWork.h"
 
 #include "cConfig.h"
+#include "cConsoleLogger.h"
 
 static const uint32_t kMessageLoggerDirectorId = 0xD81A8F98;
 
@@ -31,7 +33,7 @@ public:
 
 private:
 	cConfig config;
-	bool bSetup = false;
+	std::unique_ptr<cConsoleLogger> logger;
 };
 
 // DLL entry point

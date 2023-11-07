@@ -24,6 +24,11 @@ cMessageLoggerCOMDirector::cMessageLoggerCOMDirector() : config(), logger()
 		MessageBoxA(NULL, e.what(), "Sc4MessageViewer - Could not create console", MB_OK | MB_ICONERROR);
 	}
 
+	if (logger)
+	{
+		logger->Log(PROGRAM_NAME);
+	}
+
 	// Try and read from the config file
 	const std::filesystem::path configFilePath = cFileHelper::GetCurrentModuleDirectory().append(CONFIG_FILE_NAME);
 	if (cFileHelper::DoesFileExist(configFilePath) == false)

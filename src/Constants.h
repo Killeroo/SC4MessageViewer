@@ -1,4 +1,4 @@
-constexpr const char* PROGRAM_NAME = "Sc4MessageViewer v1.0.1\n";
+constexpr const char* PROGRAM_NAME = "SC4MessageViewer v1.0.1\n";
 constexpr const wchar_t* CONFIG_FILE_NAME = L"message_viewer_config.ini";
 
 constexpr const char* DEFAULT_CONFIG_FILE_CONTENTS =

@@ -30,6 +30,11 @@ cConsoleLogger::cConsoleLogger() : hConsoleOutput(NULL), wCurrentConsoleColor(0)
             // Default colour if we couldn't get the current console buffer
             wCurrentConsoleColor = 8;
         }
+
+        // Gray out close button on console window
+        HWND consoleWindowHandle = GetConsoleWindow();
+        HMENU consoleMenuHandle = GetSystemMenu(consoleWindowHandle, FALSE);
+        EnableMenuItem(consoleMenuHandle, SC_CLOSE, MF_GRAYED);
     }
     catch (const wil::ResultException& e)
     {
@@ -91,7 +96,6 @@ void cConsoleLogger::LogMessage(eLogLevel level, const char* format, ...) const
     // Don't better resetting, for a small performance gain maybe
     //SetConsoleTextAttribute(hConsoleOutputHandle, wCurrentConsoleColor);
 }
-
 
 void cConsoleLogger::Log(const char* format, ...) const
 {

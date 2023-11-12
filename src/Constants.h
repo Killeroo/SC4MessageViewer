@@ -1,15 +1,19 @@
-constexpr const char* PROGRAM_NAME = "SC4MessageViewer v1.0.1\n";
+constexpr const char* PROGRAM_NAME = "SC4MessageViewer v1.0.2\n";
 constexpr const wchar_t* CONFIG_FILE_NAME = L"message_viewer_config.ini";
 
 constexpr const char* DEFAULT_CONFIG_FILE_CONTENTS =
-";###############################################\n\
+"; ###############################################\n\
 ; Configuration file for SC4MessageViewer\n\
-;###############################################\n\
-; Enter the message id (in hex or integer format) you want to view on right side of = sign and enter the name you want to use to refer to it on the other side.\n\
+; ###############################################\n\
 \n\
-; NOTE: These entries have been taken from ngomez/simmaster07's findings\n\
+[setup]\n\
+ConsoleLog = true\n\
+FileLog = false\n\
+\n\
+[messages]\n\
+; Enter the message id(in hex or integer format) you want to view on right side of = sign and enter the name you want to use to refer to it on the other side.\n\
+; NOTE: These entries have been taken from ngomez / simmaster07's findings\n\
 ; Some entries have been commented out as they fire all the time, they can be run but expect some slowdown if they are all enabled\n\
-\n\
 kMsgTypeToolTipTick = 0x533CCA1E\n\
 kMsgMapChanged = 0x2A09B21\n\
 kMsgTypeDemandChanged = 0x426840A\n\
@@ -95,7 +99,7 @@ kSC4MessagePostAppInit = 0x28E9397B\n\
 kSC4MessagePreAppShutdown = 0x28E9397C\n\
 kSC4MessagePostAppShutdown = 0x28E9397D\n\
 kSC4MessageInsertBuildingOccupant = 0x8B8B2CED\n\
-kSC4MessageRemoveBuildingOccupant = 0x8B8B2CEE\n\
+;kSC4MessageRemoveBuildingOccupant = 0x8B8B2CEE\n\
 kSC4MessageBuildingOccupantStateChange = 0xC8DAC052\n\
 kSC4MessageBuildingCompletionChange = 0x2977AE2F\n\
 kSC4MessageBuildingVisualStateChange = 0x9D8E0B6\n\

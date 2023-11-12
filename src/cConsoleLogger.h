@@ -7,34 +7,18 @@
 #include <type_traits>
 #include <map>
 
-#undef ERROR
+#include "cLogger.h"
 
-enum eLogLevel : WORD
-{
-    EVENT = 15,
-    INFO = 7,
-    WARNING = 6,
-    ERROR = 4,
-    FATAL = 5,
-};
-
-const static std::map<WORD, std::string> mLogLevelStrings = {
-    {eLogLevel::EVENT, std::string("EVENT")},
-    {eLogLevel::INFO, std::string("INFO")},
-    {eLogLevel::WARNING, std::string("WARNING")},
-    {eLogLevel::ERROR, std::string("ERROR")},
-    {eLogLevel::FATAL, std::string("FATAL")}
-};
-
-class cConsoleLogger
+class cConsoleLogger : public iLogger
 {
 public:
     cConsoleLogger();
-
     ~cConsoleLogger();
 
-    void Log(const char* format, ...) const;
-    void LogMessage(eLogLevel level, const char* format, ...) const;
+public: 
+    /** Begin iLogger interface */
+    virtual void Log(const std::string* message, DWORD length) override;
+    /** End iLogger interface */
 
 private:
     HANDLE hConsoleOutput;

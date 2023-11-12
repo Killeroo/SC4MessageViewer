@@ -12,6 +12,7 @@
 
 #include "cConfig.h"
 #include "cConsoleLogger.h"
+#include "cFileLogger.h"
 
 static const uint32_t kMessageLoggerDirectorId = 0xD81A8F98;
 
@@ -33,7 +34,8 @@ public:
 
 private:
 	cConfig config;
-	std::unique_ptr<cConsoleLogger> logger;
+	std::unique_ptr<cConsoleLogger> consoleLogger;
+	std::unique_ptr<cFileLogger> fileLogger;
 };
 
 // DLL entry point

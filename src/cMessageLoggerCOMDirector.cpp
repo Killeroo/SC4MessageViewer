@@ -12,22 +12,9 @@
 
 #include <Windows.h>
 
-cMessageLoggerCOMDirector::cMessageLoggerCOMDirector() : config(), logger()
+cMessageLoggerCOMDirector::cMessageLoggerCOMDirector() : config(), consoleLogger()
 {
-	// Setup the console for logging
-	try
-	{
-		logger = std::make_unique<cConsoleLogger>();
-	}
-	catch (const std::exception& e)
-	{
-		MessageBoxA(NULL, e.what(), "Sc4MessageViewer - Could not create console", MB_OK | MB_ICONERROR);
-	}
-
-	if (logger)
-	{
-		logger->Log(PROGRAM_NAME);
-	}
+	//MessageBoxA(NULL, "Attach Debugger", "Sc4MessageViewer", MB_OK | MB_ICONERROR);
 
 	// Try and read from the config file
 	const std::filesystem::path configFilePath = cFileHelper::GetCurrentModuleDirectory().append(CONFIG_FILE_NAME);
@@ -35,15 +22,53 @@ cMessageLoggerCOMDirector::cMessageLoggerCOMDirector() : config(), logger()
 	{
 		if (config.CreateDefault(configFilePath) == false)
 		{
-			if (logger)
-			{
-				logger->LogMessage(eLogLevel::ERROR, "Could not create default config file\n");
-			}
+			MessageBoxA(NULL, "Could not create default config file", "Sc4MessageViewer", MB_OK | MB_ICONERROR);
 		}
 	}
 
 	// Load our config
-	config.Load(configFilePath, logger.get());
+	if (config.Load(configFilePath) == false)
+	{
+		MessageBoxA(NULL, "Could not read config file", "Sc4MessageViewer", MB_OK | MB_ICONERROR);
+		return;
+	}
+
+	// Setup loggers
+	if (config.LogToConsole())
+	{
+		try
+		{
+			consoleLogger = std::make_unique<cConsoleLogger>();
+		}
+		catch (const std::exception& e)
+		{
+			MessageBoxA(NULL, e.what(), "Sc4MessageViewer - Could not create console", MB_OK | MB_ICONERROR);
+		}
+	}
+	if (config.LogToFile())
+	{
+		try
+		{
+			fileLogger = std::make_unique<cFileLogger>(cFileHelper::GetCurrentModuleDirectory());
+		}
+		catch (const std::exception& e)
+		{
+			MessageBoxA(NULL, e.what(), "Sc4MessageViewer - Could not create log file", MB_OK | MB_ICONERROR);
+		}
+	}
+
+	// Print out some log preamble about what we read in the config file
+	cLogger::Log(PROGRAM_NAME);
+	const std::vector<std::string>& skippedMessages = config.GetSkippedMessages();
+	if (skippedMessages.size() > 0)
+	{
+		cLogger::LogMessage(eLogLevel::WARNING, "%d message ids could not be parsed:\n", skippedMessages.size());
+		for (const std::string& property : skippedMessages)
+		{
+			cLogger::Log("-> %s\n", property.c_str());
+		}
+	}
+	cLogger::LogMessage(eLogLevel::INFO, "Read %d message ids from config file\n", config.GetMessageIds().size());
 }
 
 cMessageLoggerCOMDirector::~cMessageLoggerCOMDirector()
@@ -57,10 +82,7 @@ bool cMessageLoggerCOMDirector::DoMessage(cIGZMessage2* pMessage)
 
 	if (config.GetMessageIds().count(dwType) != 0)
 	{
-		if (logger)
-		{
-			logger->LogMessage(eLogLevel::EVENT, "%s\n", config.GetMessageIds().at(dwType).c_str());
-		}
+		cLogger::LogMessage(eLogLevel::EVENT, "%s\n", config.GetMessageIds().at(dwType).c_str());
 	}
 
 	return true;
@@ -77,18 +99,12 @@ bool cMessageLoggerCOMDirector::PostAppInit(void)
 	cIGZMessageServer2Ptr pMessageServer;
 	if (!pMessageServer)
 	{
-		if (logger)
-		{
-			logger->LogMessage(eLogLevel::ERROR, "Could not fetch message server.\n");
-		}
+		cLogger::LogMessage(eLogLevel::ERROR, "Could not fetch message server.\n");
 		return true;
 	}
 	if (config.GetMessageIds().size() == 0)
 	{
-		if (logger)
-		{
-			logger->LogMessage(eLogLevel::ERROR, "No valid message ids have been parsed. Nothing to listen too.\n");
-		}
+		cLogger::LogMessage(eLogLevel::ERROR, "No valid message ids have been parsed. Nothing to listen too.\n");
 		return true;
 	}
 
@@ -102,16 +118,10 @@ bool cMessageLoggerCOMDirector::PostAppInit(void)
 		}
 		else
 		{
-			if (logger)
-			{
-				logger->LogMessage(eLogLevel::WARNING, "Failed to register message: %s (%d)\n", entry.second.c_str(), entry.first);
-			}
+			cLogger::LogMessage(eLogLevel::WARNING, "Failed to register message: %s (%d)\n", entry.second.c_str(), entry.first);
 		}
 	}
-	if (logger)
-	{
-		logger->LogMessage(eLogLevel::INFO, "Successfully registered %d/%d messages\n", registeredMessages, config.GetMessageIds().size());
-	}
+	cLogger::LogMessage(eLogLevel::INFO, "Successfully registered %d/%d messages\n", registeredMessages, config.GetMessageIds().size());
 
 	return true;
 }

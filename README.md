@@ -17,7 +17,16 @@ kSC4MessagePreLoad = 0x26C63340
 kSC4MessageLoad = 0x26C63341
 kSC4MessagePostLoad = 0x26C63342
 ```
+
 Each line contains a display name for the message id (this is actually displayed in the console when the event occurs) and the message id of the event that is registered with the game. Included in the default config file are a list of of preconfigured message id's from [nsgomez](https://github.com/nsgomez). If no config file is found, a default one will be created at startup time.
+
+You can also specify logging events to a console and/or a log file in the `setup` section of the config:
+
+```
+[setup]
+ConsoleLog = true
+FileLog = false
+```
 
 # License
 ```

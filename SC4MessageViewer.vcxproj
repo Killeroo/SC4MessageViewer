@@ -76,6 +76,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\cFileLogger.h" />
+    <ClInclude Include="src\cLogger.h" />
     <ClInclude Include="src\cConfig.h" />
     <ClInclude Include="src\cConsoleLogger.h" />
     <ClInclude Include="src\cFileHelper.h" />
@@ -191,6 +193,7 @@
     <ClInclude Include="vendor\gzcom-dll\gzcom-dll\include\SC4Rect.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\cFileLogger.cpp" />
     <ClCompile Include="src\cConfig.cpp" />
     <ClCompile Include="src\cConsoleLogger.cpp" />
     <ClCompile Include="src\cFileHelper.cpp" />

@@ -204,7 +204,7 @@
     <ClCompile Include="vendor\gzcom-dll\gzcom-dll\src\cRZMessage2Standard.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="message_viewer_config.ini">
+    <None Include="SC4MessageViewer.ini">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />

@@ -1,10 +1,13 @@
 constexpr const char* PROGRAM_NAME = "SC4MessageViewer v1.0.2\n";
-constexpr const wchar_t* CONFIG_FILE_NAME = L"message_viewer_config.ini";
+constexpr const wchar_t* CONFIG_FILE_NAME = L"SC4MessageViewer.ini";
 
 constexpr const char* DEFAULT_CONFIG_FILE_CONTENTS =
 "; ###############################################\n\
 ; Configuration file for SC4MessageViewer\n\
 ; ###############################################\n\
+\n\
+[Admin]\n\
+Enabled=true\n\
 \n\
 [setup]\n\
 ConsoleLog = true\n\
